@@ -11,9 +11,6 @@ import SwiftUI
 struct CustomerRow: View {
     
     let customer : Customer
-    var info: String {
-        return customer.isPremium ? "Premium" : "Standart"
-    }
     
     init(_ customer: Customer) {
         self.customer = customer
@@ -24,7 +21,7 @@ struct CustomerRow: View {
             Text(customer.gender == .male ? "👨‍💼" : "🙎‍♀️")
             VStack(alignment: .leading) {
                 Text(customer.name)
-                Text(info)
+                Text(customer.type.rawValue)
                     .foregroundColor(.gray.opacity(0.7))
                     .font(.caption)
             }

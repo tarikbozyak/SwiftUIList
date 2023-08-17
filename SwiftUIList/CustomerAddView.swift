@@ -13,7 +13,7 @@ struct CustomerAddView: View {
     
     @State var name: String = ""
     @State var gender: Gender = .male
-    @State var isPremium: Bool = false
+    @State var type: CustomerType = .standart
     @State private var showSuccessMessage = false
     
     var body: some View {
@@ -25,14 +25,14 @@ struct CustomerAddView: View {
                 Text("Female").tag(Gender.female)
             }
             
-            Picker("isPremium", selection: $isPremium) {
-                Text("YES").tag(true)
-                Text("NO").tag(false)
+            Picker("Account Type", selection: $type) {
+                Text("Standart").tag(CustomerType.standart)
+                Text("Premium").tag(CustomerType.premium)
             }
             
             Button {
                 if !name.isEmpty {
-                    let newCustomer = Customer(name: name, gender: gender, isPremium: isPremium)
+                    let newCustomer = Customer(name: name, gender: gender, type: type)
                     viewModel.addCustomer(newCustomer)
                     showText()
                 }

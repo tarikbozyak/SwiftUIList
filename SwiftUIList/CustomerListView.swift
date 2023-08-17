@@ -42,7 +42,7 @@ struct CustomerListView: View {
             }
             .sheet(isPresented: $isPresented) {
                 CustomerAddView(viewModel: vm)
-                    .presentationDetents([.medium, .fraction(0.25)])
+                    .presentationDetents([.medium, .fraction(0.35)])
             }
         }
     }

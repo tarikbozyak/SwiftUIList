@@ -11,15 +11,15 @@ struct Customer: Identifiable {
     let id: String = UUID().uuidString
     let name: String
     let gender: Gender
-    let isPremium: Bool
+    let type: CustomerType
     
     static func defaultData() -> [Customer] {
         return [
-            Customer(name: "Hasan", gender: .male, isPremium: true),
-            Customer(name: "Mert", gender: .male, isPremium: true),
-            Customer(name: "Gamze", gender: .female, isPremium: false),
-            Customer(name: "Neşet", gender: .male, isPremium: false),
-            Customer(name: "Burcu", gender: .female, isPremium: true),
+            Customer(name: "Hasan", gender: .male, type: .premium),
+            Customer(name: "Mert", gender: .male, type: .premium),
+            Customer(name: "Gamze", gender: .female, type: .standart),
+            Customer(name: "Neşet", gender: .male, type: .standart),
+            Customer(name: "Burcu", gender: .female, type: .premium),
         ]
     }
 }
@@ -27,4 +27,9 @@ struct Customer: Identifiable {
 enum Gender: String, CaseIterable {
     case male = "Male"
     case female = "Female"
+}
+
+enum CustomerType: String, CaseIterable {
+    case standart = "Standart"
+    case premium = "Premium"
 }
