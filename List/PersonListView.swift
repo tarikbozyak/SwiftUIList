@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PersonListView: View {
     
-    
     @State var itPersonList: [Person] = Person.itDefaultData()
     @State var hrPersonList: [Person] = Person.hrDefaultData()
     @State var lawPersonList: [Person] = Person.lawDefaultData()

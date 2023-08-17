@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A6884A22A8D5418005B81BD /* PersonListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6884A12A8D5418005B81BD /* PersonListViewModel.swift */; };
 		8A852D462A0A7AAD00163BA2 /* ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A852D452A0A7AAD00163BA2 /* ListApp.swift */; };
 		8A852D482A0A7AAD00163BA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A852D472A0A7AAD00163BA2 /* ContentView.swift */; };
 		8A852D4A2A0A7AAF00163BA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A852D492A0A7AAF00163BA2 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A6884A12A8D5418005B81BD /* PersonListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewModel.swift; sourceTree = "<group>"; };
 		8A852D422A0A7AAD00163BA2 /* List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = List.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A852D452A0A7AAD00163BA2 /* ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListApp.swift; sourceTree = "<group>"; };
 		8A852D472A0A7AAD00163BA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				8A852D552A0A7DD100163BA2 /* PersonListView.swift */,
 				8A852D572A0A7E7700163BA2 /* PersonRow.swift */,
 				8A852D592A0A841300163BA2 /* PersonAddView.swift */,
+				8A6884A12A8D5418005B81BD /* PersonListViewModel.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			files = (
 				8A852D542A0A7CBF00163BA2 /* Person.swift in Sources */,
 				8A852D562A0A7DD100163BA2 /* PersonListView.swift in Sources */,
+				8A6884A22A8D5418005B81BD /* PersonListViewModel.swift in Sources */,
 				8A852D482A0A7AAD00163BA2 /* ContentView.swift in Sources */,
 				8A852D5A2A0A841300163BA2 /* PersonAddView.swift in Sources */,
 				8A852D462A0A7AAD00163BA2 /* ListApp.swift in Sources */,
