@@ -27,4 +27,9 @@ class CustomerListViewModel: ObservableObject {
         customerList.move(fromOffsets: indexSet, toOffset: newPosition)
     }
     
+//    func isContains() -> Bool{
+//        let customer = Customer(name: "Hasan", gender: Gender.male, type: CustomerType.premium)
+//        return customerList.contains(customer)
+//    }
+    
 }

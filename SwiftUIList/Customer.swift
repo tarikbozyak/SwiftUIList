@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Customer: Identifiable {
+struct Customer: Identifiable, Equatable {
     let id: String = UUID().uuidString
     let name: String
     let gender: Gender
