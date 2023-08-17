@@ -34,25 +34,30 @@ enum CustomerType: String, CaseIterable {
     case premium = "Premium"
 }
 
+struct Character {
+    let name: String
+    let gender: Gender
+}
+
 extension Customer {
     
-    private static let firstNames = [
-        "Fatma",
-        "Mehmet",
-        "Ayşe",
-        "Mustafa",
-        "Emine",
-        "Ahmet",
-        "Hatice",
-        "Ali",
-        "Zeynep",
-        "Hüseyin",
-        "Elif",
-        "Hasan",
-        "İbrahim",
-        "Can",
-        "Murat",
-        "Özlem"
+    private static let characters = [
+        Character(name: "Fatma", gender: .female),
+        Character(name: "Mehmet", gender: .male),
+        Character(name: "Ayşe", gender: .female),
+        Character(name: "Mustafa", gender: .male),
+        Character(name: "Emine", gender: .female),
+        Character(name: "Ahmet", gender: .male),
+        Character(name: "Hatice", gender: .female),
+        Character(name: "Ali", gender: .male),
+        Character(name: "Zeynep", gender: .female),
+        Character(name: "Hüseyin", gender: .male),
+        Character(name: "Elif", gender: .female),
+        Character(name: "Hasan", gender: .male),
+        Character(name: "İbrahim", gender: .male),
+        Character(name: "Can", gender: .male),
+        Character(name: "Murat", gender: .male),
+        Character(name: "Özlem", gender: .female),
     ]
     
     private static let lastNames = [
@@ -71,20 +76,20 @@ extension Customer {
     ]
     
     
-    private static func generateRandomFullName() -> String {
-        let firstNamesCount = Customer.firstNames.count
+    private static func generateRandomCharacter() -> (fullName: String, gender: Gender) {
+        let characterCount = Customer.characters.count
         let lastNamesCount = Customer.lastNames.count
 
-        let firstName = Customer.firstNames[Int.random(in: 0..<firstNamesCount)]
+        let character = Customer.characters[Int.random(in: 0..<characterCount)]
         let lastName = Customer.lastNames[Int.random(in: 0..<lastNamesCount)]
 
-        return "\(firstName) \(lastName)"
+        return ("\(character.name) \(lastName)", character.gender)
     }
     
     static func generateRandomCustomer() -> Self {
-        let fullName = generateRandomFullName()
+        let character = generateRandomCharacter()
         let type = CustomerType.allCases.randomElement() ?? .standart
-        return Customer(name: fullName, gender: Gender.allCases.randomElement()!, type: type)
+        return Customer(name: character.fullName, gender: character.gender, type: type)
     }
     
     static func generateRandomCustomerData(numberOfData: Int) -> [Self] {
