@@ -19,7 +19,7 @@ struct CustomerListView: View {
                     ForEach(vm.customerList) { customer in
                         CustomerRow(customer)
                     }.onDelete { indexSet in
-                        vm.removeCustomer(indexSet)
+                        try? vm.removeCustomer(indexSet)
                     }.onMove { indexSet, newOffset in
                         vm.moveCustomer(indexSet, newOffset)
                     }

@@ -33,7 +33,7 @@ struct CustomerAddView: View {
             Button {
                 if !name.isEmpty {
                     let newCustomer = Customer(name: name, gender: gender, type: type)
-                    viewModel.addCustomer(newCustomer)
+                    try? viewModel.addCustomer(newCustomer)
                     showText()
                 }
                 
@@ -45,7 +45,6 @@ struct CustomerAddView: View {
                     Text("Add customer")
                     Spacer()
                     if showSuccessMessage {
-                        let message = ""
                         Text("Customer added..")
                             .foregroundColor(.green)
                             .font(.footnote)

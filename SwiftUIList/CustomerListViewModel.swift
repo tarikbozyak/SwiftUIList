@@ -15,11 +15,20 @@ class CustomerListViewModel: ObservableObject {
         self.customerList = Customer.defaultData()
     }
     
-    func addCustomer(_ customer: Customer) {
+    func addCustomer(_ customer: Customer) throws {
+        guard !(customerList.map({$0.id}).contains(customer.id)) else {
+            throw CustomerError.dupplicateCustomer
+        }
         customerList.append(customer)
     }
     
-    func removeCustomer(_ indexSet: IndexSet) {
+    func removeCustomer(_ indexSet: IndexSet) throws {
+        guard let index = indexSet.first.map({Int($0)}) else {
+            throw CustomerError.noIndex
+        }
+        guard customerList.count >= index else {
+            throw CustomerError.outOfIndex
+        }
         customerList.remove(atOffsets: indexSet)
     }
     
@@ -27,9 +36,10 @@ class CustomerListViewModel: ObservableObject {
         customerList.move(fromOffsets: indexSet, toOffset: newPosition)
     }
     
-//    func isContains() -> Bool{
-//        let customer = Customer(name: "Hasan", gender: Gender.male, type: CustomerType.premium)
-//        return customerList.contains(customer)
-//    }
-    
+}
+
+enum CustomerError: Error {
+    case dupplicateCustomer
+    case outOfIndex
+    case noIndex
 }
