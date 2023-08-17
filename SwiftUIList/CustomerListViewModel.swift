@@ -13,6 +13,13 @@ class CustomerListViewModel: ObservableObject {
     
     init(){
         self.customerList = Customer.defaultData()
+        addRandomCustomer()
+    }
+    
+    func addRandomCustomer(){
+        CustomerMockService.fetch(next: nil) { response, error in
+            self.customerList.append(contentsOf: response?.customer ?? [])
+        }
     }
     
     func addCustomer(_ customer: Customer) throws {

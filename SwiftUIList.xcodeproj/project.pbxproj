@@ -17,6 +17,7 @@
 		8A17EC492A8DFB5000640FD0 /* CustomerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A17EC482A8DFB5000640FD0 /* CustomerListViewModel.swift */; };
 		8A17EC5E2A8E11CF00640FD0 /* SwiftUIList_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A17EC5D2A8E11CF00640FD0 /* SwiftUIList_Tests.swift */; };
 		8A17EC652A8E122700640FD0 /* CustomerListViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A17EC642A8E122700640FD0 /* CustomerListViewModel_Tests.swift */; };
+		8A17EC692A8EB16900640FD0 /* CustomerMockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A17EC682A8EB16900640FD0 /* CustomerMockService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		8A17EC5B2A8E11CF00640FD0 /* SwiftUIList_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIList_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A17EC5D2A8E11CF00640FD0 /* SwiftUIList_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIList_Tests.swift; sourceTree = "<group>"; };
 		8A17EC642A8E122700640FD0 /* CustomerListViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListViewModel_Tests.swift; sourceTree = "<group>"; };
+		8A17EC682A8EB16900640FD0 /* CustomerMockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerMockService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				8A17EC442A8DF6B400640FD0 /* CustomerAddView.swift */,
 				8A17EC462A8DF8CA00640FD0 /* CustomerListView.swift */,
 				8A17EC482A8DFB5000640FD0 /* CustomerListViewModel.swift */,
+				8A17EC682A8EB16900640FD0 /* CustomerMockService.swift */,
 			);
 			path = SwiftUIList;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 				8A17EC472A8DF8CA00640FD0 /* CustomerListView.swift in Sources */,
 				8A17EC492A8DFB5000640FD0 /* CustomerListViewModel.swift in Sources */,
 				8A17EC412A8DF45500640FD0 /* CustomerRow.swift in Sources */,
+				8A17EC692A8EB16900640FD0 /* CustomerMockService.swift in Sources */,
 				8A17EC432A8DF49A00640FD0 /* Customer.swift in Sources */,
 				8A17EC452A8DF6B400640FD0 /* CustomerAddView.swift in Sources */,
 			);
