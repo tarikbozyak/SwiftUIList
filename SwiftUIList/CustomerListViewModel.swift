@@ -10,12 +10,15 @@ import Foundation
 class CustomerListViewModel: ObservableObject {
     
     @Published var customerList: [Customer] = []
+    var isLoading: Bool = false
     
     init(){
         addRandomCustomer()
     }
     
     func addRandomCustomer(){
+        isLoading = true
+        defer { isLoading = false }
         CustomerMockService.fetch { response, error in
             self.customerList.append(contentsOf: response)
         }

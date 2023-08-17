@@ -14,22 +14,37 @@ struct CustomerListView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                Section {
-                    ForEach(vm.customerList) { customer in
-                        CustomerRow(customer)
-                    }.onDelete { indexSet in
-                        try? vm.removeCustomer(indexSet)
-                    }.onMove { indexSet, newOffset in
-                        vm.moveCustomer(indexSet, newOffset)
+            VStack {
+                if !vm.isLoading && vm.customerList.count > 0 {
+                    List {
+                        Section {
+                            ForEach(vm.customerList) { customer in
+                                CustomerRow(customer)
+                            }.onDelete { indexSet in
+                                try? vm.removeCustomer(indexSet)
+                            }.onMove { indexSet, newOffset in
+                                vm.moveCustomer(indexSet, newOffset)
+                            }
+                        } header: {
+                            Text("Customer List")
+                        } footer: {
+                            Text("Count : \($vm.customerList.count)")
+                        }
                     }
-                } header: {
-                    Text("Customer List")
-                } footer: {
-                    Text("Count : \($vm.customerList.count)")
+                    .listStyle(.grouped)
+                }
+                
+                else {
+                    ProgressView()
+                        .padding(.bottom, 2)
+                    Text("Loading")
+                        .foregroundColor(.gray)
+                        .font(.footnote)
+                        .bold()
+                    Spacer()
                 }
             }
-            .listStyle(.grouped)
+            
             .navigationTitle("Customer")
             .toolbar {
                 Button {

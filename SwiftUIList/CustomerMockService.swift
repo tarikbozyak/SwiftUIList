@@ -21,12 +21,12 @@ typealias FetchCompletionHandler = ([Customer], FetchError?) -> ()
 class CustomerMockService {
 
     private struct Constants {
-        static let customerCountRange: ClosedRange<Int> = 50...80 // lower bound must be > 0
-        static let fetchCountRange: ClosedRange<Int> = 10...20 // lower bound must be > 0
-        static let lowWaitTimeRange: ClosedRange<Double> = 0.0...0.3 // lower bound must be >= 0.0
-        static let highWaitTimeRange: ClosedRange<Double> = 0.5...1.0 // lower bound must be >= 0.0
-        static let errorProbability = 0.05 // must be > 0.0
-        static let backendBugTriggerProbability = 0.35 // must be > 0.0
+        static let customerCountRange: ClosedRange<Int> = 50...80
+        static let fetchCountRange: ClosedRange<Int> = 10...20
+        static let lowWaitTimeRange: ClosedRange<Double> = 0.2...0.8
+        static let highWaitTimeRange: ClosedRange<Double> = 1.0...1.5
+        static let errorProbability = 0.05
+        static let backendBugTriggerProbability = 0.35
     }
 
     private static var customer: [Customer] = []
@@ -74,7 +74,6 @@ class CustomerMockService {
             if RandomUtils.roll(forProbabilityGTZero: Constants.backendBugTriggerProbability) {
                 error = FetchError(description: "Backend Error!")
             }
-            
         }
 
         return (response, error, waitTime)
@@ -85,7 +84,6 @@ class CustomerMockService {
 //Util
 fileprivate class RandomUtils {
     
-
     class func generateRandomInt(inClosedRange range: ClosedRange<Int>) -> Int {
         return Int.random(in: range)
     }
