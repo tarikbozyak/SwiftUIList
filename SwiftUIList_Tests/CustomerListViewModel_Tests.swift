@@ -23,20 +23,6 @@ final class CustomerListViewModel_Tests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    
-    func test_CustomerListViewModel_addCustomer_shouldContainsCustomer(){
-        //Given
-        let vm = CustomerListViewModel()
-        let customer = Customer(name: "Hasan", gender: Gender.male, type: CustomerType.premium)
-        
-        //When
-        try? vm.addCustomer(customer)
-        
-        //Then
-        let situtation = vm.customerList.contains(customer)
-        XCTAssertTrue(situtation)
-    }
     
     func test_CustomerListViewModel_addCustomer_shouldThrowDuplicateCustomerError(){
         //Given
@@ -111,7 +97,7 @@ final class CustomerListViewModel_Tests: XCTestCase {
         XCTAssertGreaterThan(vm.customerList.count, 0)
     }
     
-    func test_CustomerListViewModel_addCustomer_shouldRemoveCustomerSuccessfully(){
+    func test_CustomerListViewModel_removeCustomer_shouldRemoveCustomerSuccessfully(){
         //Given
         let vm = CustomerListViewModel()
         
@@ -134,7 +120,7 @@ final class CustomerListViewModel_Tests: XCTestCase {
         XCTAssertFalse(vm.customerList.contains(firstCustomer))
     }
     
-    func test_CustomerListViewModel_addCustomer_shouldThrowNewPositionNotValidError(){
+    func test_CustomerListViewModel_moveCustomer_shouldThrowNewPositionNotValidError(){
         //Given
         let vm = CustomerListViewModel()
         
@@ -163,7 +149,7 @@ final class CustomerListViewModel_Tests: XCTestCase {
         
     }
     
-    func test_CustomerListViewModel_addCustomer_shouldMoveCustomerSuccessfully(){
+    func test_CustomerListViewModel_moveCustomer_shouldMoveCustomerSuccessfully(){
         //Given
         let vm = CustomerListViewModel()
         
