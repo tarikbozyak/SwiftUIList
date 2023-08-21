@@ -1,6 +1,6 @@
-# SwiftUI List Project with Test Cases
+# SwiftUI List with Test Cases
 
-![SwiftUI List Project](https://github.com/tarikbozyak/SwiftUIList/blob/main/screenshots/screens.jpg)
+![SwiftUI List](https://github.com/tarikbozyak/SwiftUIList/blob/main/screenshots/screens.jpg)
 
 ## Overview
 - Written in Swift
