@@ -68,9 +68,9 @@ final class CustomerListViewModel_Tests: XCTestCase {
     func test_CustomerListViewModel_removeCustomer_shouldThrowNoIndexError(){
         //Given
         let vm = CustomerListViewModel()
+        let index = IndexSet()
         
         //When
-        let index = IndexSet()
         
         //Then
         XCTAssertThrowsError(try vm.removeCustomer(index), "Should throw no index error!"){ error in
@@ -82,9 +82,9 @@ final class CustomerListViewModel_Tests: XCTestCase {
     func test_CustomerListViewModel_removeCustomer_shouldThrowOutOfIndexError(){
         //Given
         let vm = CustomerListViewModel()
+        let index = IndexSet(arrayLiteral: vm.customerList.count + 1)
         
         //When
-        let index = IndexSet(arrayLiteral: vm.customerList.count + 1)
         
         //Then
         XCTAssertThrowsError(try vm.removeCustomer(index), "Should throw out of index error!"){ error in
