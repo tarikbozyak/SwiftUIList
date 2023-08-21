@@ -23,7 +23,7 @@ struct CustomerListView: View {
                             }.onDelete { indexSet in
                                 try? vm.removeCustomer(indexSet)
                             }.onMove { indexSet, newOffset in
-                                vm.moveCustomer(indexSet, newOffset)
+                                try? vm.moveCustomer(indexSet, newOffset)
                             }
                         } header: {
                             Text("Customer List")

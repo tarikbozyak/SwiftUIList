@@ -41,7 +41,10 @@ class CustomerListViewModel: ObservableObject {
         customerList.remove(atOffsets: indexSet)
     }
     
-    func moveCustomer(_ indexSet: IndexSet, _ newPosition: Int) {
+    func moveCustomer(_ indexSet: IndexSet, _ newPosition: Int) throws {
+        guard customerList.count >= newPosition else {
+            throw CustomerError.newPositionOutOfIndex
+        }
         customerList.move(fromOffsets: indexSet, toOffset: newPosition)
     }
     
@@ -51,4 +54,5 @@ enum CustomerError: Error {
     case dupplicateCustomer
     case outOfIndex
     case noIndex
+    case newPositionOutOfIndex
 }
