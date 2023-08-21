@@ -23,8 +23,8 @@ class CustomerMockService {
     private struct Constants {
         static let customerCountRange: ClosedRange<Int> = 50...80
         static let fetchCountRange: ClosedRange<Int> = 10...20
-        static let lowWaitTimeRange: ClosedRange<Double> = 0.2...0.8
-        static let highWaitTimeRange: ClosedRange<Double> = 1.0...1.5
+        static let lowWaitTimeRange: ClosedRange<Double> = 1...2
+        static let highWaitTimeRange: ClosedRange<Double> = 2...2.5
         static let errorProbability = 0.05
         static let backendBugTriggerProbability = 0.35
     }
