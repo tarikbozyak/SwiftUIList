@@ -7,6 +7,7 @@
 - Uses SwiftUI
 - Designed with MVVM pattern
 - Uses combine
+- Uses unit tests
 - Mock service
 
 ## Test Cases
