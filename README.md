@@ -1,4 +1,4 @@
-# SwiftUI List w/ Test Cases
+# SwiftUI List with Test Cases
 
 ![SwiftUI List](https://github.com/tarikbozyak/SwiftUIList/blob/main/screenshots/screens.jpg)
 
